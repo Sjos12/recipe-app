@@ -28,7 +28,7 @@ class _CreateRecipeState extends State<CreateRecipeWidget> {
                     border: OutlineInputBorder(), hintText: 'Name your recipe'),
               ),
               IngredientsWidget(),
-              InstructionsWidget(),
+              //InstructionsWidget(),
               Row(
                 children: [
                   ElevatedButton(onPressed: () {}, child: Text('Submit'))

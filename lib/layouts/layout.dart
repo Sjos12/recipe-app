@@ -11,15 +11,19 @@ class LayoutWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: title != null ? Text(title!) : const Text('Recipe feed'),
+        title: Text(title ?? 'Recipe feed'),
       ),
       body: child,
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CreateRecipeWidget()))),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CreateRecipeWidget()),
+            );
+          }),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.receipt),
             label: 'Recipes',
