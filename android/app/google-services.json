@@ -29,6 +29,13 @@
             {
               "client_id": "138643934150-h2i9gotoh41jakb924f57mr4rflvgnav.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "138643934150-pcr6nnr7csnffg3qp2ocro6va0bg0j0b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.recipeApp"
+              }
             }
           ]
         }
