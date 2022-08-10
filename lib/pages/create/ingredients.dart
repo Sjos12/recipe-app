@@ -5,6 +5,7 @@ import 'package:recipe_app/enums/ingedient_types.dart';
 import 'package:recipe_app/helpers/ingredient_icons.dart';
 import 'package:recipe_app/models/ingredient.dart';
 import 'package:recipe_app/models/recipe.dart';
+import 'package:recipe_app/pages/create/create_ingredient.dart';
 
 class IngredientsWidget extends StatefulWidget {
   @override
@@ -38,8 +39,15 @@ class IngredientsState extends State<IngredientsWidget> {
         listOfIngredients(value),
         ElevatedButton(
             onPressed: () {
-              Provider.of<RecipeModel>(context, listen: false).addIngredient(
-                  IngredientModel(type: IngredientTypes.dairy, name: 'Milk'));
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ChangeNotifierProvider(
+                          create: (_) => RecipeModel(),
+                          child: CreateIngredientWidget())));
+
+              // Provider.of<RecipeModel>(context, listen: false).addIngredient(
+              //     IngredientModel(type: IngredientTypes.dairy, name: 'Milk'));
             },
             child: const Text('Add ingredient')),
       ]);

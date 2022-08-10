@@ -20,22 +20,24 @@ class _CreateRecipeState extends State<CreateRecipeWidget> {
         title: 'Creating a recipe',
         child: Center(
           child: ChangeNotifierProvider<RecipeModel>(
-            create: (context) => RecipeModel(),
-            child: Wrap(spacing: 20, children: [
-              TextField(
-                onChanged: (text) => print('tap'),
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), hintText: 'Name your recipe'),
-              ),
-              IngredientsWidget(),
-              //InstructionsWidget(),
-              Row(
-                children: [
-                  ElevatedButton(onPressed: () {}, child: Text('Submit'))
-                ],
-              )
-            ]),
-          ),
+              create: (context) => RecipeModel(),
+              builder: ((context, child) {
+                return Wrap(spacing: 20, children: [
+                  TextField(
+                    onChanged: (text) => print('tap'),
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Name your recipe'),
+                  ),
+                  IngredientsWidget(),
+                  //InstructionsWidget(),
+                  Row(
+                    children: [
+                      ElevatedButton(onPressed: () {}, child: Text('Submit'))
+                    ],
+                  )
+                ]);
+              })),
         ));
   }
 }

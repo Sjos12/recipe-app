@@ -9,9 +9,18 @@ class RecipeModel extends ChangeNotifier {
 
   final List<IngredientModel> _ingredients = [];
   final List<TagModel> _tags = [];
+  final String name = '';
 
   UnmodifiableListView get ingredients => UnmodifiableListView(_ingredients);
   UnmodifiableListView get tags => UnmodifiableListView(_tags);
+
+  Map<String, dynamic> toMap() {
+    return {
+      'name': name,
+      'ingredients': _ingredients,
+      'tags': _tags,
+    };
+  }
 
   /// An unmodifiable view of the items in the cart.
   // UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
